@@ -11,7 +11,6 @@
         $scope.message = "";
 
         $scope.countOfTheMeals = function (string) {
-            if (angular.$isEmpty(string)) return 0;
             return string.split(",").length;
         }
 
