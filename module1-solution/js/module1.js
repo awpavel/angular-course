@@ -21,7 +21,7 @@
             var count = 0;
             meals.forEach(function(item) {
                 if (item.trim() != '') count++;
-            }
+            });
             return count;
         }
 
