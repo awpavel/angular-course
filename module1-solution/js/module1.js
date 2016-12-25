@@ -16,7 +16,7 @@
         }
 
         $scope.checkIfTooMuch = function () {
-            var count = countOfTheMeals($scope.eatForLunch);
+            var count = $scope.countOfTheMeals($scope.eatForLunch);
             if (count == 0) $scope.message = "Please enter data first";
             else if (count >= 1 && count <=3) $scope.message = "Enjoy!";
             else $scope.message = "Too much!";

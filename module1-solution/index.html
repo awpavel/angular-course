@@ -8,8 +8,9 @@
 </head>
 <body ng-app="module1">
     <div ng-controller="EatingController">
-        <input type="text" ng-model="eatForLunch">
-        <button ng-click="checkIfTooMuch()" value="Check ff too much"></button>
+        <input type="text" ng-model="eatForLunch" size="30">
+        <br>
+        <button ng-click="checkIfTooMuch()">Check ff too much</button>
         <br>
         <span>{{message}}</span>
     </div>
