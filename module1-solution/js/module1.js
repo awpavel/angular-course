@@ -17,7 +17,7 @@
                 data = data.substr(0,data.length-1);
 
             if (data == "") return 0;
-            var meals = data.split(",").length;
+            var meals = data.split(",");
             var count = 0;
             meals.forEach(function(item) {
                 if (item.trim() != '') count++;
