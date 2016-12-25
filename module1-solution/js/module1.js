@@ -11,8 +11,13 @@
         $scope.message = "";
 
         $scope.countOfTheMeals = function (string) {
-            if (string == "") return 0;
-            return string.split(",").length;
+            var data = string;
+
+            while (data.substr(data.length-1,1) == ',')
+                data = data.substr(0,data.length-1);
+
+            if (data == "") return 0;
+            return data.split(",").length;
         }
 
         $scope.checkIfTooMuch = function () {
