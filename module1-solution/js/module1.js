@@ -11,6 +11,7 @@
         $scope.message = "";
 
         $scope.countOfTheMeals = function (string) {
+            if (string == "") return 0;
             return string.split(",").length;
         }
 
