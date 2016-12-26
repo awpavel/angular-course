@@ -3,12 +3,13 @@
  */
 (function () {
     'use strict';
-    angular.module('module1', []).controller('EatingController', EatingController);
+    angular.module('LunchCheck', []).controller('LunchCheckController', LunchCheckController);
 
-    EatingController.$inject = ['$scope'];
-    function EatingController($scope) {
-        $scope.eatForLunch = "";
+    LunchCheckController.$inject = ['$scope'];
+    function LunchCheckController($scope) {
+        $scope.mealsForLunch = "";
         $scope.message = "";
+        $scope.result = "";
 
         $scope.countOfTheMeals = function (string) {
             var data = string;
@@ -26,8 +27,12 @@
         }
 
         $scope.checkIfTooMuch = function () {
-            var count = $scope.countOfTheMeals($scope.eatForLunch);
-            if (count == 0) $scope.message = "Please enter data first";
+            var count = $scope.countOfTheMeals($scope.mealsForLunch);
+            $scope.result = "message-ok";
+            if (count == 0) {
+                $scope.message = "Please enter data first";
+                $scope.result = "message-error";
+            }
             else if (count >= 1 && count <=3) $scope.message = "Enjoy!";
             else $scope.message = "Too much!";
         }
