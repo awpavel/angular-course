@@ -1,0 +1,22 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>repeat</title>
+</head>
+<body ng-app="appRepeat">
+<div ng-controller="repeatController">
+    Search: <input type="text" ng-model="searchString">
+    <ul>
+        <li ng-repeat="item in list | filter : searchString">
+            {{::item}}
+        </li>
+    </ul>
+
+    <button ng-click="getWatcherCount()">watcher count</button><br>
+    <button ng-click="addItemsToList()">add items</button><br>
+    <button ng-click="addItemsToList2()">add items 2</button><br>
+</div>
+<script src="../js/angular.min.js"></script>
+<script src="repeat.js"></script>
+</body>
+</html>

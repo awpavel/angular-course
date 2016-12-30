@@ -20,19 +20,35 @@
     </style>
 </head>
 <body ng-app="LunchCheck">
-    <div ng-controller="LunchCheckController">
-        <div class="{{result}}">
+    <!--<div ng-controller="LunchCheckController">-->
+        <!--<div class="{{result}}">-->
 
-            <input type="text" ng-model="mealsForLunch" size="30">
-            <br><br>
-            <button ng-click="checkIfTooMuch()">Check ff too much</button>
-            <br><br>
-            <span><strong>{{message}}</strong></span>
-            <br><br>
-            <h4>* do NOT considering the empty items</h4>
-        </div>
+            <!--<input type="text" ng-model="mealsForLunch" size="30">-->
+            <!--<br><br>-->
+            <!--<button ng-click="checkIfTooMuch()">Check ff too much</button>-->
+            <!--<br><br>-->
+            <!--<span><strong>{{message}}</strong></span>-->
+            <!--<br><br>-->
+            <!--<h4>* do NOT considering the empty items</h4>-->
+        <!--</div>-->
+
+        <!--<div>{{sum | currency}}</div>-->
+        <!--<div>{{getMessage()}}</div>-->
+
+        <!--<br>-->
+        <!--<button ng-click="runTimer()">Call timer</button><br/><br>-->
+        <!--timer caller - {{timer}}-->
+    <!--</div>-->
+
+    <div ng-controller="BindingController">
+        Full name: <div>{{::fullName}}</div>
+        First name: <input type="text" ng-model="firstName">
+
+        <br>
+        <button ng-click="getWatcherCount()">Watcher count</button><br>
+        <button ng-click="showFullName()">Show full name</button>
     </div>
-    <script src="js/angular.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="../js/angular.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

@@ -1,0 +1,28 @@
+call $digest cycle, cover all $apply or use angular service
+2-way binding, 1 way binding and 1 time binding. {{::value-name}}
+$$watcherCount, $watch
+========inheritance==========================
+$scope1.ctrl1 = new Controller1();
+$scope2 = Object.create($scope1)
+$scope2.ctrl1 = new Controller2();
+===========================================
+
+angular.module("app", [])
+.controller('ctrl', CtrlFunction)
+.provider('ServiceName', ServiceFunctionProvider)
+.config(Config);
+
+'config function'
+
+Config.$inject = ['ServiceNameProvider']; //ServiceName - name of actual provider + Provider
+
+function Config(ServiceNameProvider) {
+    ServiceNameProvider.config.prop = "value";
+}
+
+
+Service - create singleton
+Factory - create service
+Provider - service provider with config. use .$get - to specify the function with the service
+
+ng-if (remove element), ng-show (show/hide element), ng-hide (show/hide element)
