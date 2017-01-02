@@ -66,6 +66,7 @@
 
         this.removeItem = function (index) {
             ctrl.items.splice(index, 1);
+            if (!ctrl.items.length) ctrl.emptyList = true;
         }
 
     }
