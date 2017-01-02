@@ -1,0 +1,18 @@
+<table class="table">
+    <tr ng-repeat="item in list.items" >
+        <td width="80%">
+            <div><strong>Id:</strong>{{item.id}}</div>
+            <div><strong>Short name:</strong>{{item.short_name}}</div>
+            <div><strong>Name:</strong>{{item.name}}</div>
+            <div><strong>Description:</strong>{{item.description}}</div>
+            <div><strong>Price small:</strong>{{item.price_small}}</div>
+            <div><strong>Price large:</strong>{{item.price_large}}</div>
+            <div><strong>Small portion name:</strong>{{item.small_portion_name}}</div>
+            <div><strong>Large portion name:</strong>{{item.large_portion_name}}</div>
+        </td>
+        <td width="20%" style="text-align: right">
+            <button ng-click="list.onRemove({index:$index})">Don't want this one!</button>
+        </td>
+    </tr>
+</table>
+<div ng-transclude style="display: none" class="error"></div>
