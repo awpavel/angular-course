@@ -1,0 +1,10 @@
+<div>
+    <a ui-sref="home">Home</a> &lt; <a ui-sref="categories">Categories</a> < items of category
+</div><br>
+<div>
+    <strong>Category description</strong>
+    <strong>Short name</strong> - {{itemCtrl.category.short_name}}<br>
+    <strong>Name</strong> - {{itemCtrl.category.name}}<br>
+    <strong>Special instructions</strong> - {{itemCtrl.categoty.special_instructions}}<br>
+</div>
+<items-list items="itemCtrl.items"></items-list>
