@@ -1,0 +1,48 @@
+<div class="container">
+    <form novalidate name="signUpForm">
+        <div class="form-group">
+            <label>First name</label>
+            <input type="text" ng-minlength="2" required placeholder="First name" name="firstName" class="form-control" ng-model="ctrl.user.firstName">
+            <span ng-if="(signUpForm.firstName.$error.required || signUpForm.firstName.$error.minlength) && signUpForm.firstName.$touched">
+                First name is required
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label>Last name</label>
+            <input ng-minlength="2" type="text" required placeholder="Last name" name="lastName" class="form-control" ng-model="ctrl.user.lastName">
+            <span ng-if="(signUpForm.lastName.$error.required || signUpForm.lastName.$error.minlength) && signUpForm.lastName.$touched">
+                Last name is required
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label>Email address</label>
+            <input type="email" required placeholder="Email address" name="email" class="form-control" ng-model="ctrl.user.email">
+            <span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">
+                Email is required
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label>Phone number ###-###-####</label>
+            <input type="text" required pattern="(\d{3})-(\d{3})-(\d{4})" placeholder="Phone number ххх-ххх-хххх" name="phoneNumber" class="form-control" ng-model="ctrl.user.phoneNumber">
+            <span ng-if="signUpForm.phoneNumber.$invalid && signUpForm.phoneNumber.$touched">
+                Phone number is required
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label>The short name of your favorite dish</label>
+            <input required ng-blur="ctrl.findDish()" type="text" ng-minlength="2" placeholder="The short name of your favorite dish"
+                   name="favoriteDish" class="form-control" ng-model="ctrl.user.favoriteDish">
+            <span ng-if="signUpForm.favoriteDish.$error.required && signUpForm.favoriteDish.$touched">
+                Min length of favorite dish is 2
+            </span>
+            <div ng-if="ctrl.errorMessage.length">{{ctrl.errorMessage}}</div>
+        </div>
+
+        <button ng-disabled="signUpForm.$invalid || !ctrl.dishFlag" class="btn btn-warning" ng-click="ctrl.signUp()">Sign up</button>
+        <div style="padding-top: 20px" ng-if="ctrl.message.length">{{ctrl.message}}</div>
+    </form>
+</div>
